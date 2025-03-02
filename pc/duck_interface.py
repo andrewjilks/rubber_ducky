@@ -3,7 +3,7 @@ import time
 
 # Serial port configuration (adjust as needed)
 SERIAL_PORT = "/dev/ttyUSB0"  # Change this based on your OS
-BAUD_RATE = 115200
+BAUD_RATE = 9600
 
 def send_command(ser, command):
     """Send a command to the ESP32 and read the response."""
