@@ -9,7 +9,11 @@ def send_command(ser, command):
     """Send a command to the ESP32 and read the response."""
     ser.write((command + "\n").encode())
     time.sleep(0.1)  # Give ESP32 time to process
-    response = ser.read_all().decode().strip()
+
+    raw_data = ser.read_all()
+    print(f"Raw data received: {raw_data}")  # Debugging
+
+    response = raw_data.decode(errors="ignore").strip()  # Ignore decoding errors
     return response
 
 def main():

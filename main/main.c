@@ -27,7 +27,7 @@ void get_duck_data(char *buffer, size_t length) {
         if (err == ESP_OK && required_size < length) {
             nvs_get_str(my_handle, "data", buffer, &required_size);
         } else {
-            strncpy(buffer, "{}", length - 1);  // Default empty JSON if error
+            strncpy(buffer, "{\"name\":\"Rubber Ducky\",\"mood\":\"Neutral\",\"xp\":0}", length - 1);
             buffer[length - 1] = '\0';
         }
         nvs_close(my_handle);
@@ -77,13 +77,14 @@ void app_main() {
                 char response[258];  
                 snprintf(response, sizeof(response), "%.255s\r\n", duck_data);
                 uart_write_bytes(UART_NUM, response, strlen(response));
+                printf("Sent to PC: %s\n", response);  // Debugging output
             } 
             else if (strncmp(command, "setname ", 8) == 0) {
                 char new_name[21];  // Max 20 chars + NULL terminator
                 strncpy(new_name, command + 8, 20);
                 new_name[20] = '\0';
 
-                // Update JSON data (basic manual string handling)
+                // Update JSON data
                 char new_duck_data[256];
                 snprintf(new_duck_data, sizeof(new_duck_data), "{\"name\":\"%s\",\"mood\":\"Neutral\",\"xp\":0}", new_name);
 
@@ -91,6 +92,7 @@ void app_main() {
                 strncpy(duck_data, new_duck_data, sizeof(duck_data));
 
                 uart_write_bytes(UART_NUM, "Name updated!\r\n", 15);
+                printf("Updated Duck Data: %s\n", new_duck_data); // Debugging output
             }
             else {
                 uart_write_bytes(UART_NUM, "Unknown command\r\n", 17);
