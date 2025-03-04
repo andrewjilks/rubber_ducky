@@ -2,14 +2,19 @@
 #define DEVICE_STATE_H
 
 #include <stdint.h>
+#include <stddef.h>
 
 typedef struct {
+    char name[32];
+    char model[32];
     uint32_t xp;
-    // Add additional state variables as needed.
-} device_state_t;
+    uint8_t state;
+} DeviceState;
 
-void device_state_init(void);
-void device_state_update(uint32_t xp_gain);
-device_state_t device_state_get(void);
+void init_device_state(void);
+void update_device_xp(uint32_t amount);
+void set_device_state(uint8_t new_state);
+void update_device_name(const char *new_name);
+void get_device_info(char *buffer, size_t buffer_size);
 
 #endif // DEVICE_STATE_H

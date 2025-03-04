@@ -11,13 +11,16 @@ static const char *TAG = "rubber_ducky";
 void app_main(void) {
     ESP_LOGI(TAG, "Starting Rubber Ducky Firmware");
 
-    // Initialize device state and communication interface
-    device_state_init();
+    // Initialize device state and communication interface.
+    init_device_state();
     comms_init();
 
-    // Create a task to handle incoming packets
+    // Optionally, send initial device info.
+    send_device_info();
+
+    // Create a task to handle incoming packets.
     xTaskCreate(packet_handler_task, "packet_handler_task", 4096, NULL, 5, NULL);
 
-    // Additional application logic can be added here
-    // For example: create periodic tasks or process other events
+    // Application logic continues...
+    ESP_LOGI(TAG, "Returned from app_main()");
 }

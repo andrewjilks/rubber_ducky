@@ -63,9 +63,9 @@ Ensure you have Python installed, then install dependencies:
     cd pc
     pip install -r requirements.txt
 
-To start the serial interface:
+To rename duck via packet info:
 
-    python duck_interface.py
+    python3 duck_interface.py /dev/ttyUSB0 "Ducko"
 
 ---
 

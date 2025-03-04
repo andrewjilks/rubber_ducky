@@ -1,10 +1,12 @@
 #include "comms.h"
+#include "device_state.h"
 #include "driver/uart.h"
 #include "esp_log.h"
+#include <string.h>
 
 static const char *TAG = "comms";
 
-#define UART_NUM       UART_NUM_1
+#define UART_NUM       UART_NUM_0   // Changed to UART0 for USB-serial output
 #define BUF_SIZE       (1024)
 
 void comms_init(void) {
@@ -22,12 +24,17 @@ void comms_init(void) {
 }
 
 int comms_receive(uint8_t *data, size_t length) {
-    // Read bytes from UART; timeout set to 20ms.
-    int len = uart_read_bytes(UART_NUM, data, length, 20 / portTICK_PERIOD_MS);
-    return len;
+    return uart_read_bytes(UART_NUM, data, length, 20 / portTICK_PERIOD_MS);
 }
 
 int comms_send(const uint8_t *data, size_t length) {
-    int len = uart_write_bytes(UART_NUM, (const char*)data, length);
-    return len;
+    return uart_write_bytes(UART_NUM, (const char*)data, length);
+}
+
+void send_device_info(void) {
+    char buffer[128];
+    get_device_info(buffer, sizeof(buffer));
+    // Remove this if you only want the log output:
+    // comms_send((uint8_t*)buffer, strlen(buffer));
+    ESP_LOGI(TAG, "Device info sent: %s", buffer);
 }
