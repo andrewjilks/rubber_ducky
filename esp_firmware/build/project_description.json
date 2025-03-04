@@ -1,7 +1,7 @@
 {
     "version":            "1.2",
     "project_name":       "rubber_ducky",
-    "project_version":    "1",
+    "project_version":    "9efc5ec-dirty",
     "project_path":       "/home/andrew/rubber_ducky/esp_firmware",
     "idf_path":           "/home/andrew/esp-idf",
     "build_dir":          "/home/andrew/rubber_ducky/esp_firmware/build",
