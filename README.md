@@ -63,9 +63,10 @@ Ensure you have Python installed, then install dependencies:
     cd pc
     pip install -r requirements.txt
 
-Packet handling including construction sending an recieving is handled via a text menu interface in python
+To communicate serially via text interface:
 
-   python 3 duck_interface.py /dev/ttyUSB0
+    python3 duck_interface.py /dev/ttyUSB0
+
 ---
 
 ## 📡 Communication Protocol
