@@ -1,0 +1,126 @@
+Command: /home/andrew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/andrew/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/andrew/rubber_ducky/esp_firmware/build/rubber_ducky.elf /home/andrew/rubber_ducky/esp_firmware/build/bootloader/bootloader.elf -m '/home/andrew/.espressif/python_env/idf5.5_py3.11_env/bin/python' '/home/andrew/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2182-ga6c3a9cbbb 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar  3 2025 23:25:08[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0af80h ( 44928) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001afa8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001afcc vaddr=3ffb0000 size=023cch (  9164) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=0001d3a0 vaddr=40080000 size=02c78h ( 11384) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1cc20h (117792) map[0m
+[0;32mI (162) esp_image: segment 5: paddr=0003cc48 vaddr=40082c78 size=0b894h ( 47252) load[0m
+[0;32mI (188) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (188) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (207) app_init: Project name:     rubber_ducky[0m
+[0;32mI (211) app_init: App version:      78fc9c3-dirty[0m
+[0;32mI (216) app_init: Compile time:     Mar  4 2025 18:41:06[0m
+[0;32mI (221) app_init: ELF file SHA256:  7e7e5274b...[0m
+[0;32mI (225) app_init: ESP-IDF:          v5.5-dev-2182-ga6c3a9cbbb[0m
+[0;32mI (231) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (234) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (238) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (243) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (249) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (254) heap_init: At 3FFB2D18 len 0002D2E8 (180 KiB): DRAM[0m
+[0;32mI (259) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (264) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (270) heap_init: At 4008E50C len 00011AF4 (70 KiB): IRAM[0m
+[0;32mI (277) spi_flash: detected chip: generic[0m
+[0;32mI (279) spi_flash: flash io: dio[0m
+[0;33mW (282) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (295) main_task: Started on CPU0[0m
+[0;32mI (305) main_task: Calling app_main()[0m
+[0;32mI (305) rubber_ducky: Starting Rubber Ducky Firmware[0m
+[0;32mI (315) comms: UART initialized on UART0[0m
+[0;32mI (315) comms: Device info sent: NAME:Ducko MODEL:ESP32-PET XP:2 STATE:0[0m
+[0;32mI (315) rubber_ducky: Returned from app_main()[0m
+[0;32mI (325) main_task: Returned from app_main()[0m
+[0;32mI (12215) packet_handler: Received packet (length 14)[0m
+[0;33mW (12215) packet_handler: Duplicate packet detected, ignoring.[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6368
+load:0x40078000,len:15880
+load:0x40080400,len:3860
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v5.5-dev-2182-ga6c3a9cbbb 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Mar  3 2025 23:25:08[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (30) boot: chip revision: v3.1[0m
+[0;32mI (33) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (40) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (44) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (51) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (77) boot: End of partition table[0m
+[0;32mI (80) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=0af80h ( 44928) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0001afa8 vaddr=3ff80000 size=0001ch (    28) load[0m
+[0;32mI (103) esp_image: segment 2: paddr=0001afcc vaddr=3ffb0000 size=023cch (  9164) load[0m
+[0;32mI (111) esp_image: segment 3: paddr=0001d3a0 vaddr=40080000 size=02c78h ( 11384) load[0m
+[0;32mI (119) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=1cc20h (117792) map[0m
+[0;32mI (162) esp_image: segment 5: paddr=0003cc48 vaddr=40082c78 size=0b894h ( 47252) load[0m
+[0;32mI (188) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (188) boot: Disabling RNG early entropy source...[0m
+[0;32mI (198) cpu_start: Multicore app[0m
+[0;32mI (207) cpu_start: Pro cpu start user code[0m
+[0;32mI (207) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (207) app_init: Application information:[0m
+[0;32mI (207) app_init: Project name:     rubber_ducky[0m
+[0;32mI (211) app_init: App version:      78fc9c3-dirty[0m
+[0;32mI (216) app_init: Compile time:     Mar  4 2025 18:41:06[0m
+[0;32mI (221) app_init: ELF file SHA256:  7e7e5274b...[0m
+[0;32mI (225) app_init: ESP-IDF:          v5.5-dev-2182-ga6c3a9cbbb[0m
+[0;32mI (231) efuse_init: Min chip rev:     v0.0[0m
+I (234) efuse_init: Max chip rev:     v3.99 
+[0;32mI (238) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (243) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (249) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (254) heap_init: At 3FFB2D18 len 0002D2E8 (180 KiB): DRAM[0m
+[0;32mI (259) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (264) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (270) heap_init: At 4008E50C len 00011AF4 (70 KiB): IRAM[0m
+[0;32mI (277) spi_flash: detected chip: generic[0m
+[0;32mI (279) spi_flash: flash io: dio[0m
+[0;33mW (282) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (295) main_task: Started on CPU0[0m
+[0;32mI (305) main_task: Calling app_main()[0m
+[0;32mI (305) rubber_ducky: Starting Rubber Ducky Firmware[0m
+[0;32mI (315) comms: UART initialized on UART0[0m
+[0;32mI (315) comms: Device info sent: NAME:Ducko MODEL:ESP32-PET XP:2 STATE:0[0m
+[0;32mI (315) rubber_ducky: Returned from app_main()[0m
+[0;32mI (325) main_task: Returned from app_main()[0m
+[0;32mI (9095) packet_handler: Received packet (length 14)[0m
+�� �UI (9095) packet_handler: Packet sent: type 0xf0, seq 1, payload length 0
+[0;32mI (9095) packet_handler: ACK
