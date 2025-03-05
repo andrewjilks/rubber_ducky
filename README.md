@@ -63,10 +63,9 @@ Ensure you have Python installed, then install dependencies:
     cd pc
     pip install -r requirements.txt
 
-To rename duck via packet info:
+Packet handling including construction sending an recieving is handled via a text menu interface in python
 
-    python3 duck_interface.py /dev/ttyUSB0 "Ducko"
-
+   python 3 duck_interface.py /dev/ttyUSB0
 ---
 
 ## 📡 Communication Protocol
