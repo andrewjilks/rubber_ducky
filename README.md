@@ -114,25 +114,6 @@ The state machine comprises the following states:
 7. **STATE_CONFIG**: Modifying settings and enabling content sharing.
 
 Each state is associated with a specific function that executes the tasks pertinent to that state.
-
-### State Transition Mechanism
-
-Transitions between states are managed by the `set_state(device_state_t new_state)` function. This function ensures that the system moves seamlessly from one state to another based on predefined conditions or events. For instance, after completing initialization in `STATE_INIT`, the system might transition to `STATE_SERIAL` to handle communication tasks.
-
-### State Handlers
-
-Each state has a dedicated handler function responsible for executing its specific operations. These handlers are organized in an array for efficient access:
-
-static const state_function_t state_functions[] = {
-    default_state,
-    serial_mode,
-    wifi_mode,
-    gpio_mode,
-    bluetooth_mode,
-    debug_mode,
-    config_mode
-};
-
 ---
 
 ## 📌 To-Do List
