@@ -43,7 +43,7 @@ void init_device_state(void) {
          nvs_set_str(handle, NVS_KEY_NAME, device.name);
     }
 
-    // Device model can be hard-coded if unchanging.
+    // Device model is hard-coded.
     strcpy(device.model, "ESP32-PET");
 
     // Read XP
@@ -82,6 +82,16 @@ void set_device_state(uint8_t new_state) {
         nvs_commit(handle);
         nvs_close(handle);
     }
+}
+
+uint8_t get_device_state(void) {
+    uint8_t state = 0;
+    nvs_handle_t handle;
+    if (nvs_open(NVS_NAMESPACE, NVS_READONLY, &handle) == ESP_OK) {
+         nvs_get_u8(handle, NVS_KEY_STATE, &state);
+         nvs_close(handle);
+    }
+    return state;
 }
 
 void update_device_name(const char *new_name) {

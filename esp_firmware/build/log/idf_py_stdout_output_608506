@@ -1,0 +1,18 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] cd /home/andrew/rubber_ducky/esp_firmware/build/bootloader/esp-idf/esptool_py && /home/andrew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/andrew/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/andrew/rubber_ducky/esp_firmware/build/bootloader/bootloader.bin
+Bootloader binary size 0x6650 bytes. 0x9b0 bytes (9%) free.
+[2/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj
+[3/9] No install step for 'bootloader'
+[4/9] Linking C static library esp-idf/main/libmain.a
+[5/9] Completed 'bootloader'
+[6/9] Generating ld/sections.ld
+[7/9] Linking CXX executable rubber_ducky.elf
+[8/9] Generating binary image from built executable
+esptool.py v4.9.dev5
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/andrew/rubber_ducky/esp_firmware/build/rubber_ducky.bin
+[9/9] cd /home/andrew/rubber_ducky/esp_firmware/build/esp-idf/esptool_py && /home/andrew/.espressif/python_env/idf5.5_py3.11_env/bin/python /home/andrew/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/andrew/rubber_ducky/esp_firmware/build/partition_table/partition-table.bin /home/andrew/rubber_ducky/esp_firmware/build/rubber_ducky.bin
+rubber_ducky.bin binary size 0x386e0 bytes. Smallest app partition is 0x100000 bytes. 0xc7920 bytes (78%) free.

@@ -11,9 +11,12 @@ typedef struct {
     uint8_t state;
 } DeviceState;
 
+extern DeviceState device;  // Makes 'device' available to other files
+
 void init_device_state(void);
 void update_device_xp(uint32_t amount);
 void set_device_state(uint8_t new_state);
+uint8_t get_device_state(void);
 void update_device_name(const char *new_name);
 void get_device_info(char *buffer, size_t buffer_size);
 

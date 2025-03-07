@@ -5,6 +5,7 @@
 #include "device_state.h"
 #include "comms.h"
 #include "packet_handler.h"
+#include "state_machine.h"
 
 static const char *TAG = "rubber_ducky";
 
@@ -23,4 +24,12 @@ void app_main(void) {
 
     // Application logic continues...
     ESP_LOGI(TAG, "Returned from app_main()");
+    
+    state_machine_init();
+    // Main loop for state machine execution.
+    while(1) {
+         state_machine_run();
+         // Delay to allow state processing (adjust timing as needed).
+         vTaskDelay(100 / portTICK_PERIOD_MS);
+    }
 }
