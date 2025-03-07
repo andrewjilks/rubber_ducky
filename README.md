@@ -17,6 +17,8 @@
     │   │   ├── device_state.h      # Header for device state management
     │   │   ├── comms.c             # Handles serial communication
     │   │   ├── comms.h             # Header for serial communication
+    │   │   ├── state_machine.c     # Main state machine implementation
+    │   │   ├── state_machine.h     # Header for state machine source
     │   ├── CMakeLists.txt          # ESP-IDF build configuration
     ├── pc/                         # PC-side interface
     │   ├── duck_interface.py       # Handles serial communication with ESP32
@@ -92,6 +94,45 @@ Packets follow a structured format for reliable communication:
 - **BC** → Checksum (basic validation)  
 - **000A** → Data (XP increase of 10)  
 - **55** → Footer (End of packet)  
+
+---
+
+## State Machine Implementation
+
+To enhance the modularity and maintainability of our firmware, we've integrated a state machine architecture. This design allows the system to transition between various operational modes, each encapsulated within distinct states. Such an approach not only streamlines the control flow but also simplifies debugging and future feature expansions.
+
+### State Definitions
+
+The state machine comprises the following states:
+
+1. **STATE_INIT**: Initialization and cleanup operations.
+2. **STATE_SERIAL**: Handling serial communication tasks.
+3. **STATE_WIFI**: Managing Wi-Fi functionalities.
+4. **STATE_GPIO**: Controlling General-Purpose Input/Output (GPIO) operations.
+5. **STATE_BLUETOOTH**: Placeholder for future Bluetooth functionalities.
+6. **STATE_DEBUG**: Performing debugging and logging activities.
+7. **STATE_CONFIG**: Modifying settings and enabling content sharing.
+
+Each state is associated with a specific function that executes the tasks pertinent to that state.
+
+### State Transition Mechanism
+
+Transitions between states are managed by the `set_state(device_state_t new_state)` function. This function ensures that the system moves seamlessly from one state to another based on predefined conditions or events. For instance, after completing initialization in `STATE_INIT`, the system might transition to `STATE_SERIAL` to handle communication tasks.
+
+### State Handlers
+
+Each state has a dedicated handler function responsible for executing its specific operations. These handlers are organized in an array for efficient access:
+
+```c
+static state_handler_t state_handlers[NUM_STATES] = {
+    state_init,
+    state_serial,
+    state_wifi,
+    state_gpio,
+    state_bluetooth,
+    state_debug,
+    state_config
+};
 
 ---
 

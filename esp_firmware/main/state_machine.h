@@ -3,7 +3,7 @@
 
 #include <stdint.h>
 
-/* LIST OF STATES
+/* LIST OF MACHINE STATES
  * 0 - default/state switcher
  * 1 - serial communication mode
  * 2 - wifi mode
