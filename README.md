@@ -123,15 +123,14 @@ Transitions between states are managed by the `set_state(device_state_t new_stat
 
 Each state has a dedicated handler function responsible for executing its specific operations. These handlers are organized in an array for efficient access:
 
-```c
-static state_handler_t state_handlers[NUM_STATES] = {
-    state_init,
-    state_serial,
-    state_wifi,
-    state_gpio,
-    state_bluetooth,
-    state_debug,
-    state_config
+static const state_function_t state_functions[] = {
+    default_state,
+    serial_mode,
+    wifi_mode,
+    gpio_mode,
+    bluetooth_mode,
+    debug_mode,
+    config_mode
 };
 
 ---

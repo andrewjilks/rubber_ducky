@@ -1,0 +1,39 @@
+Overview for remaining functionality implementation
+
+Default/Reset state:
+
+	Switching logic for functions in the index this mode is swapped into
+	if the state is changed then recieves the packet to update the NVS
+
+Serial communicator mode:
+
+	The most important thing for the main functionality of this module 
+	is that it will be very base level. When recieving packets over
+	wired connection then it is already setup to parse
+
+WIFI mode:
+
+	The user will be prompted to connect to wireless networks that
+	have been configured in config mode. As well as set up wireless
+	packet mode
+
+GPIO mode:
+
+	Execute code stored on the device to use the gpio pins for
+	controlling electric devices
+
+Bluetooth mode:
+
+	This mode will be used primarily for device pairing and running 
+	bluetooth related device code 
+
+Debug mode:
+
+	In this mode the user can view debug logs and access error handling
+	functionality
+
+Config mode:
+
+	Users can configure various settings on the device including;
+	stored code files, network credentials, circuit layout files,
+	 and file sharing settings
